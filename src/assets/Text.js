@@ -19,7 +19,6 @@ const Wrapper = styled.p`
   font-family: "Roboto", sans-serif;
   font-weight: ${(props) => fontWeights[props.weight]};
   font-size: ${(props) => fontSizes[props.size]}px;
-  ${"" /* line-height: ${(props) => fontSizes[props.size] + 15}px; */}
   margin: 0;
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${(props) => (props.color ? props.color : colors.textTabTitle)};

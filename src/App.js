@@ -4,6 +4,10 @@ import MainContent from "./components/MainContent";
 
 import styled from "styled-components";
 
+// setup mock service worker to emulate backend API
+const { worker } = require("./mocks/browser");
+worker.start();
+
 const Wrapper = styled.div`
   width: 100%;
 `;

@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import * as colors from "../../assets/colors";
 
-import gameThumb from "../../assets/images/Bitmap.png";
-
 const Wrapper = styled.div`
   display: flex;
   flex: 1;
@@ -20,20 +18,21 @@ const WrapperText = styled.div`
 const Img = styled.img`
   height: 40px;
   width: 40px;
+  background: url(${(props) => `/images/${props.image_url}.png`});
   margin-right: 10px;
 `;
 
-function Campaign() {
+function Campaign({ region, name, image_url }) {
   return (
     <Wrapper>
-      <Img src={gameThumb} />
+      <Img image_url={image_url} />
       <WrapperText>
         <Text size="s" weight="light">
-          Summoners War
+          {name}
         </Text>
 
         <Text size="xs" weight="light" color={colors.textGrayUS}>
-          US
+          {region}
         </Text>
       </WrapperText>
     </Wrapper>

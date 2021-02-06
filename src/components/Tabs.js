@@ -1,44 +1,47 @@
-import styled from "styled-components";
 import "@reach/tabs/styles.css";
+
+import * as React from "react";
 
 import { Tabs, TabList, TabPanels, TabPanel, Tab } from "@reach/tabs";
 import ListBox from "./ListBox";
 import TabItem from "./TabItem";
 
-import { primary } from "../assets/colors";
+function TabsComponent({ campaignData }) {
+  const [activeTab, setActiveTab] = React.useState("upcoming");
 
-const Wrapper = styled.div`
-  height: 200px;
-`;
-
-function TabsComponent() {
   return (
-    <Tabs style={{ "max-width": "1200px", margin: "auto auto" }}>
+    <Tabs
+      onChange={(index) => setActiveTab(["upcoming", "live", "past"][index])}
+      style={{ maxWidth: "1200px", margin: "auto auto" }}
+    >
       <TabList
         style={{
           marginLeft: "20px",
-          "background-color": "white",
+          backgroundColor: "white",
         }}
       >
         <Tab>
-          <TabItem />
+          <TabItem
+            active={activeTab === "upcoming"}
+            title={"Upcoming Campaigns"}
+          />
         </Tab>
         <Tab>
-          <TabItem active />
+          <TabItem active={activeTab === "live"} title={"Live Campaigns"} />
         </Tab>
         <Tab>
-          <TabItem />
+          <TabItem active={activeTab === "past"} title={"Past Campaigns"} />
         </Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
-          <ListBox />
+          <ListBox campaigns={campaignData["upcoming"]} />
         </TabPanel>
         <TabPanel>
-          <ListBox />
+          <ListBox campaigns={campaignData["live"]} />
         </TabPanel>
         <TabPanel>
-          <ListBox />
+          <ListBox campaigns={campaignData["past"]} />
         </TabPanel>
       </TabPanels>
     </Tabs>

@@ -22,30 +22,24 @@ const ListWrapper = styled.div`
   max-height: 55vh;
   flex-direction: column;
   overflow-y: scroll;
-  ${"" /* height: 100%; */}
 `;
 
-function App() {
+function ListBox({ campaigns, title }) {
   return (
-    <Wrapper>
+    <Wrapper key={title}>
       <ListHeading />
       <ListWrapper>
-        <ListItem />
-        <Divider />
-        <ListItem />
-        <Divider />
-        <ListItem />
-        <Divider />
-        <ListItem />
-        <Divider />
-        <ListItem />
-        <Divider />
-        <ListItem />
-        <Divider />
-        <ListItem />
+        {campaigns.map((campaign, idx, array) => {
+          return (
+            <div key={campaign.id}>
+              <ListItem campaign={campaign} />
+              {idx < array.length - 1 ? <Divider /> : ""}
+            </div>
+          );
+        })}
       </ListWrapper>
     </Wrapper>
   );
 }
 
-export default App;
+export default ListBox;

@@ -4,8 +4,6 @@ import Text from "../../assets/Text";
 import * as colors from "../../assets/colors";
 
 const Wrapper = styled.div`
-  ${"" /* margin-top: 80px; */}
-  ${"" /* border: 1px solid red; */}
   display: flex;
   justify-content: space-between;
   margin: 0 0 20 0;

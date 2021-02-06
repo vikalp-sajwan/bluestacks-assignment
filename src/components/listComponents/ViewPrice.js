@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   margin-right: 50px;
 `;
 
-function ViewPrice() {
+function ViewPrice({ campaign }) {
   return (
     <Wrapper>
       <Modal>
@@ -19,7 +19,7 @@ function ViewPrice() {
           <IconButton type="price" />
         </ModalOpenButton>
         <ModalContents>
-          <ViewPriceModal />
+          <ViewPriceModal {...campaign} />
         </ModalContents>
       </Modal>
     </Wrapper>

@@ -29,7 +29,7 @@ const Img = styled.img`
   margin-right: 5px;
 `;
 
-const Wrapper = styled.button`
+const Button = styled.button`
   height: 40px;
   padding: 5px;
   display: flex;
@@ -43,14 +43,14 @@ const Wrapper = styled.button`
   }
 `;
 
-function IconButton({ type, alt = "button", ...props }) {
+function IconButton({ type, alt = "button", clickHandler, ...props }) {
   return (
-    <Wrapper {...props}>
+    <Button onClick={clickHandler} {...props}>
       <Img src={iconAssetType[type]} alt={alt} />
       <Text size="xs" weight="light" color={colors.gray10}>
         {iconText[type]}
       </Text>
-    </Wrapper>
+    </Button>
   );
 }
 

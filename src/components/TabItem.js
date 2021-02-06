@@ -13,11 +13,11 @@ const Wrapper = styled.div`
 
 const TabText = styled(Text)``;
 
-function TabItem({ active = false }) {
+function TabItem({ active = false, title = "" }) {
   return (
     <Wrapper active={active}>
       <TabText weight="light" color={active ? accent : textTabTitle}>
-        Upcoming Campaigns
+        {title}
       </TabText>
     </Wrapper>
   );

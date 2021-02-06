@@ -7,7 +7,6 @@ import Actions from "./Actions";
 
 const Wrapper = styled.div`
   margin-top: 80px;
-  ${"" /* border: 1px solid red; */}
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -15,13 +14,14 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-function ListItem() {
+function ListItem({ campaign }) {
+  const { createdOn } = campaign;
   return (
     <Wrapper>
-      <Date />
-      <Campaign />
-      <ViewPrice />
-      <Actions />
+      <Date timeStamp={createdOn} />
+      <Campaign {...campaign} />
+      <ViewPrice campaign={campaign} />
+      <Actions {...campaign} />
     </Wrapper>
   );
 }

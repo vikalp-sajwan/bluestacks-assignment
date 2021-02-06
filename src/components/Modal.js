@@ -1,4 +1,5 @@
 import * as React from "react";
+import "@reach/dialog/styles.css";
 import { Dialog as ReachDialog } from "@reach/dialog";
 import styled from "styled-components";
 
@@ -10,7 +11,7 @@ const Dialog = styled(ReachDialog)`
   border-radius: 3px;
   padding-bottom: 3.5em;
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
-  margin: 40vh auto;
+  margin: 50% auto;
 `;
 
 const callAll = (...fns) => (...args) => fns.forEach((fn) => fn && fn(...args));
@@ -40,7 +41,12 @@ function ModalOpenButton({ children: child }) {
 function ModalContentsBase(props) {
   const [isOpen, setIsOpen] = React.useContext(ModalContext);
   return (
-    <Dialog isOpen={isOpen} onDismiss={() => setIsOpen(false)} {...props} />
+    <Dialog
+      aria-label="modal button"
+      isOpen={isOpen}
+      onDismiss={() => setIsOpen(false)}
+      {...props}
+    />
   );
 }
 
