@@ -1,4 +1,10 @@
-.App {
+@import "reset.css";
+
+[data-reach-tab][data-selected] {
+  border-color: transparent !important;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

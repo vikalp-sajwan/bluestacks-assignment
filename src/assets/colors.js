@@ -1,0 +1,12 @@
+export const base = "#F2F2F2";
+export const primary = "#2B416C";
+export const primaryHeader = "#1F2640";
+export const accent = "#83A515";
+export const accentSecondary = "#90EE90";
+export const textTabTitle = "#556789";
+export const gray10 = "#7788A3";
+export const gray20 = "#F1F1F4";
+export const gray30 = "#ECECEC";
+export const textGrayUS = "#9CA2B7";
+export const dark = "#181B34";
+export const white = "#FFFFFF";
