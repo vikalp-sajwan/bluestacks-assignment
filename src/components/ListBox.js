@@ -22,17 +22,21 @@ const ListWrapper = styled.div`
   max-height: 55vh;
   flex-direction: column;
   overflow-y: scroll;
+  @media (max-width: 1000px) {
+    overflow-y: inherit;
+    max-height: fit-content;
+  }
 `;
 
-function ListBox({ campaigns, title }) {
+function ListBox({ campaigns, updateHandler = null }) {
   return (
-    <Wrapper key={title}>
+    <Wrapper>
       <ListHeading />
       <ListWrapper>
         {campaigns.map((campaign, idx, array) => {
           return (
             <div key={campaign.id}>
-              <ListItem campaign={campaign} />
+              <ListItem campaign={campaign} updateHandler={updateHandler} />
               {idx < array.length - 1 ? <Divider /> : ""}
             </div>
           );

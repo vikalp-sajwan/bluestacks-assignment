@@ -1,5 +1,5 @@
+import * as React from "react";
 import styled from "styled-components";
-
 import calendar from "../../assets/images/calendar.png";
 import file from "../../assets/images/file.png";
 import price from "../../assets/images/price.png";

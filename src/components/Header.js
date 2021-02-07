@@ -13,16 +13,24 @@ const Background = styled.header`
   background: ${primaryHeader};
 `;
 
+const ImgWrapper = styled.div`
+  width: 80%;
+  margin: auto auto;
+  max-width: 1200px;
+`;
+
 const Img = styled.img`
-  position: absolute;
+  position: relative;
   top: 17px;
-  left: 182px;
+  left: 20px;
 `;
 
 function Header() {
   return (
     <Background>
-      <Img src={companyLogo} alt="Company Logo" />
+      <ImgWrapper>
+        <Img src={companyLogo} alt="Company Logo" />
+      </ImgWrapper>
     </Background>
   );
 }

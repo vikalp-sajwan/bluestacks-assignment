@@ -18,6 +18,7 @@ function TabsComponent({ campaignData }) {
         style={{
           marginLeft: "20px",
           backgroundColor: "white",
+          overflowX: "auto",
         }}
       >
         <Tab>
@@ -35,7 +36,10 @@ function TabsComponent({ campaignData }) {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <ListBox campaigns={campaignData["upcoming"]} />
+          <ListBox
+            campaigns={campaignData["upcoming"]}
+            updateHandler={campaignData.updateHandler}
+          />
         </TabPanel>
         <TabPanel>
           <ListBox campaigns={campaignData["live"]} />

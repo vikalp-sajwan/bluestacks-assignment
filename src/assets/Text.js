@@ -22,6 +22,7 @@ const Wrapper = styled.p`
   margin: 0;
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${(props) => (props.color ? props.color : colors.textTabTitle)};
+  white-space: nowrap;
 `;
 
 function Text({

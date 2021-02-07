@@ -14,14 +14,14 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-function ListItem({ campaign }) {
+function ListItem({ campaign, updateHandler }) {
   const { createdOn } = campaign;
   return (
     <Wrapper>
       <Date timeStamp={createdOn} />
       <Campaign {...campaign} />
       <ViewPrice campaign={campaign} />
-      <Actions {...campaign} />
+      <Actions {...campaign} updateHandler={updateHandler} />
     </Wrapper>
   );
 }

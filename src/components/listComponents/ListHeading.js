@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   max-width: 1200px;
   flex-wrap: wrap;
   background: ${colors.gray20};
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const DateDiv = styled.div`
