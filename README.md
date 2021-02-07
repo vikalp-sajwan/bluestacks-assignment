@@ -1,5 +1,7 @@
 # Created with Create React App
 
+## Deployed at : https://nifty-golick-1c917f.netlify.app/
+
 ## Technologies used:
 - React 17
 - Styled-components for CSS-in-js
